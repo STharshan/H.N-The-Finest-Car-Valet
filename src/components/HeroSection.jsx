@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
-
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function HeroSection() {
-
-
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
-      {/* Background Video */}
+    <section id="home" className="relative min-h-screen overflow-hidden text-white">
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         src="/hero.mp4"
         autoPlay
         loop
@@ -17,58 +12,53 @@ export default function HeroSection() {
         playsInline
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(11,31,58,0.82),rgba(11,31,58,0.58))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(46,111,214,0.22),transparent_45%)]" />
 
-      {/* HERO CONTENT */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
-        <div
-          className="max-w-4xl w-full text-center"
-          data-aos="fade-up"
-        >
-          <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
-            UK Tintz – Window Tinting Specialists
+      <section className="relative z-10 flex min-h-screen items-center px-6 py-28">
+        <div className="mx-auto w-full max-w-5xl text-center">
+          <p className="mb-5 text-sm uppercase tracking-[0.35em] text-[rgba(255,255,255,0.72)]">
+            Premium Automotive Detailing
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Nottingham’s Trusted Automotive <br />
-            <span className="text-red-500">Tinting Expert</span>
+          <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-[58px]">
+            Luxury finish, trusted care, and a cleaner drive every time.
           </h1>
 
-          <p className="text-gray-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            Professional window tinting, car vinyl wrapping, and commercial
-            tinting - delivered with precision and care.
+          <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-[rgba(255,255,255,0.82)] md:text-lg">
+            Professional detailing, tinting, and exterior restoration crafted for a premium
+            automotive look with honest service and lasting quality.
           </p>
 
-          {/* Button */}
-          <div className="flex justify-center mb-10">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="#contact" className="btn-primary inline-flex rounded-full px-8 py-3.5 font-semibold shadow-lg">
+              Book Your Detail
+            </a>
             <a
-              href="#contact"
-              className="bg-red-500 hover:bg-red-600 text-white px-10 py-3 rounded-full font-semibold transition"
+              href="#service"
+              className="btn-secondary inline-flex rounded-full px-8 py-3.5 font-semibold text-white"
             >
-              Get in Touch
+              Explore Services
             </a>
           </div>
 
-          {/* Key points – VISUALLY CONNECTED */}
-          <div className="flex flex-col sm:flex-row justify-center gap-8 text-sm">
-            <div className="flex items-center gap-2 justify-center">
-              <FaCheckCircle className="text-red-500" size={18} />
-              <span>Over 10000+ Vehicles Transformed</span>
-            </div>
-
-            <div className="flex items-center gap-2 justify-center">
-              <FaCheckCircle className="text-red-500" size={18} />
-              <span>20+ Years of Experience</span>
-            </div>
-
-            <div className="flex items-center gap-2 justify-center">
-              <FaCheckCircle className="text-red-500" size={18} />
-              <span>Nottinghams Most Trusted Tinting Specialist</span>
-            </div>
+          <div className="mt-12 grid gap-4 text-sm sm:grid-cols-3">
+            {[
+              "Premium protection and polish",
+              "Trusted workmanship",
+              "Modern luxury finish",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center justify-center gap-2 rounded-2xl border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.06)] px-4 py-3 backdrop-blur-sm"
+              >
+                <FaCheckCircle className="text-[#2e6fd6]" size={16} />
+                <span className="text-[rgba(255,255,255,0.88)]">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 }

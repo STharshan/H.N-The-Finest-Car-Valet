@@ -1,105 +1,73 @@
-import React from 'react'
-
 export default function About() {
-  const images = [
-    '/1.jpeg', '/2.jpeg', '/3.jpeg', '/4.jpeg',
-    '/5.jpeg', '/6.jpeg', '/7.jpeg', '/8.jpeg'
-  ]
+  const images = ["/1.jpeg", "/2.jpeg", "/3.jpeg", "/4.jpeg", "/5.jpeg", "/6.jpeg", "/7.jpeg", "/8.jpeg"];
 
   const scrollToContact = () => {
-    const el = document.getElementById('contact')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
-  const n = images.length || 1
-  const secondsPerImage = 10
-  const gapPx = 16
-  const EASING = 'linear'
+  const n = images.length || 1;
+  const secondsPerImage = 10;
+  const gapPx = 16;
+  const EASING = "linear";
 
   return (
-    <section id="about" className="py-20 bg-black text-white">
+    <section id="about" className="theme-surface-muted py-20">
       <div className="container mx-auto px-4 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ABOUT{' '}
-              <span className="gradient-text">
-                AF-MOK
-              </span>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] theme-accent">Why Choose Us</p>
+            <h2 className="site-heading mb-6 text-3xl font-bold md:text-5xl">
+              Premium care for drivers who expect a flawless finish.
             </h2>
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              At{' '}
-              <span className="gradient-text font-semibold">
-                AF-MOK PERFORMANCE
-              </span>
-              , we're passionate about helping you get the most out of your vehicle.
-              Our team of experts specializes in providing high-quality performance
-              products, software solutions, and services for cars and LCV.
+            <p className="mb-6 text-lg leading-relaxed theme-muted">
+              We combine precision detailing, trusted products, and a luxury-first approach to
+              keep your vehicle looking sharp, protected, and professionally finished.
             </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              We offer a comprehensive range of solutions tailored to your vehicle&apos;s
-              specific needs, including economy software, performance software, DPF,
-              ADBLUE, and EGR solutions.
-            </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              With our user-friendly interfaces, exceptional customer service,
-              and customizable options, you can trust us to deliver results.
+            <p className="mb-6 text-lg leading-relaxed theme-muted">
+              Every service is tailored for quality, consistency, and that clean high-contrast
+              automotive look that feels polished from every angle.
             </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">1000+</div>
-                <div className="text-gray-400 text-sm">Vehicles Tuned</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">10+</div>
-                <div className="text-gray-400 text-sm">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">98%</div>
-                <div className="text-gray-400 text-sm">Client Satisfaction</div>
-              </div>
+            <div className="mb-8 grid grid-cols-3 gap-4">
+              {[
+                { value: "1000+", label: "Vehicles Serviced" },
+                { value: "10+", label: "Years Experience" },
+                { value: "98%", label: "Client Satisfaction" },
+              ].map((stat) => (
+                <div key={stat.label} className="premium-card rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold theme-accent md:text-3xl">{stat.value}</div>
+                  <div className="mt-1 text-xs uppercase tracking-[0.2em] theme-muted">{stat.label}</div>
+                </div>
+              ))}
             </div>
 
-            <button
-              type="button"
-              onClick={scrollToContact}
-              className="bg-linear-to-r from-[#00E5FF] via-white to-[#FF2B2B] text-black hover:opacity-90 transition px-6 py-3 rounded-md font-semibold"
-            >
+            <button type="button" onClick={scrollToContact} className="btn-primary rounded-full px-6 py-3 font-semibold">
               Contact Us
             </button>
           </div>
 
-          {/* Right: Auto-scroll gallery */}
-          <div
-            className="relative overflow-hidden rounded-2xl shadow-lg group"
-            style={{ '--gap': `${gapPx}px` }}
-          >
-            <div
-              className="relative h-80 md:h-96 lg:h-104"
-              style={{ margin: '0 calc(var(--gap) * -1)' }}
-            >
+          <div className="relative overflow-hidden rounded-3xl shadow-[0_24px_70px_rgba(11,31,58,0.12)]" style={{ "--gap": `${gapPx}px` }}>
+            <div className="relative h-80 md:h-96 lg:h-[28rem]" style={{ margin: "0 calc(var(--gap) * -1)" }}>
               <div
                 className="flex h-full will-change-transform"
                 style={{
-                  '--n': n,
-                  '--dur': `${n * secondsPerImage}s`,
+                  "--n": n,
+                  "--dur": `${n * secondsPerImage}s`,
                   animation: `aboutscroll var(--dur) ${EASING} infinite`,
                 }}
               >
                 {[...images, ...images].map((src, i) => (
                   <div
                     key={i}
-                    className="w-full flex-[0_0_100%] h-full"
-                    style={{ boxSizing: 'border-box', padding: '0 var(--gap)' }}
+                    className="h-full w-full flex-[0_0_100%]"
+                    style={{ boxSizing: "border-box", padding: "0 var(--gap)" }}
                   >
-                    <div className="h-full w-full overflow-hidden rounded-xl bg-black">
+                    <div className="h-full w-full overflow-hidden rounded-2xl bg-black">
                       <img
                         src={src}
-                        alt={`Workshop ${i + 1}`}
+                        alt={`Detailing showcase ${i + 1}`}
                         className="block h-full w-full object-contain"
                         loading="lazy"
                         decoding="async"
@@ -111,32 +79,21 @@ export default function About() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-24 bg-linear-to-r from-black to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-24 bg-linear-to-l from-black to-transparent" />
-
-            <style jsx>{`
-              .group:hover div[style*='aboutscroll'] {
-                animation-play-state: paused;
-              }
-              @keyframes aboutscroll {
-                from { transform: translateX(0); }
-                to { transform: translateX(calc(-100% * var(--n))); }
-              }
-            `}</style>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[rgba(245,247,250,1)] to-transparent dark:from-[rgba(7,17,31,1)]" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[rgba(245,247,250,1)] to-transparent dark:from-[rgba(7,17,31,1)]" />
           </div>
         </div>
       </div>
 
-      {/*FIX for iPhone gradient text */}
-      <style jsx global>{`
-        .gradient-text {
-          background: linear-gradient(to right, #00E5FF, #ffffff, #FF2B2B);
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          -webkit-text-fill-color: transparent;
+      <style>{`
+        .group:hover div[style*='aboutscroll'] {
+          animation-play-state: paused;
+        }
+        @keyframes aboutscroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(calc(-100% * var(--n))); }
         }
       `}</style>
     </section>
-  )
+  );
 }

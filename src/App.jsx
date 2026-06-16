@@ -14,11 +14,13 @@ function App() {
     <Router>
       <ScrollToTop />
       <ScrollToHash />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
+      <div className="theme-page min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
