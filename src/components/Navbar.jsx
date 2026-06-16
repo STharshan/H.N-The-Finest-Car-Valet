@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-3 z-50 mx-auto w-[calc(100%-1.5rem)] max-w-7xl rounded-2xl border border-[rgba(201,206,214,0.16)] bg-[rgba(11,31,58,0.88)] px-4 py-3 text-white shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-xl md:w-[calc(100%-2.5rem)]">
+    <nav className="theme-glass fixed left-0 right-0 top-3 z-50 mx-auto w-[calc(100%-1.5rem)] max-w-7xl rounded-2xl px-4 py-3 text-white md:w-[calc(100%-2.5rem)]">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 cursor-pointer">
           <HashLink smooth to="/#home" className="flex items-center gap-3">
@@ -54,16 +54,16 @@ const Navbar = () => {
           <HashLink
             smooth
             to="/#contact"
-            className="inline-flex items-center rounded-full bg-[#2e6fd6] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#163b6d]"
+            className="btn-primary inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white"
           >
             CONTACT US
           </HashLink>
         </div>
 
         <div className="flex items-center gap-2 xl:hidden">
-          <ThemeToggle compact className="border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.06)] text-white" />
+          <ThemeToggle compact className="theme-chip-dark" />
           <button
-            className="rounded-full border border-[rgba(255,255,255,0.14)] p-2 text-white transition-colors hover:text-[#2e6fd6]"
+            className="theme-chip-dark rounded-full p-2 transition-colors hover:text-[#2e6fd6]"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -87,12 +87,12 @@ const Navbar = () => {
           ))}
           <ThemeToggle
             compact
-            className="w-full justify-center border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.05)] text-white"
+            className="theme-chip-dark w-full justify-center"
           />
           <HashLink
             smooth
             to="/#contact"
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#2e6fd6] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#163b6d]"
+            className="btn-primary inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-white"
             onClick={() => setIsOpen(false)}
           >
             CONTACT US

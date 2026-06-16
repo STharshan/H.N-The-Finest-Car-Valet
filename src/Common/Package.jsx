@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FiPhone, FiMail, FiMapPin, FiCheck, FiX } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
 
@@ -22,10 +22,6 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
     const [form, setForm] = useState({
         ...createInitialForm(packageName || ""),
     });
-
-    useEffect(() => {
-        setForm(createInitialForm(packageName || ""));
-    }, [packageName]);
 
     if (!isOpen) return null;
 
@@ -299,6 +295,7 @@ export default function Package({ data }) {
             </section>
 
             <QuoteModal
+                key={selectedPackage || "default-package"}
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
                 packageName={selectedPackage}

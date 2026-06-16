@@ -14,6 +14,10 @@
   --color-accent: #2e6fd6;
   --color-silver: #c9ced6;
   --color-success: #2e8b57;
+  --color-overlay: rgba(11, 31, 58, 0.75);
+  --color-hero-overlay: linear-gradient(135deg, rgba(11, 31, 58, 0.82), rgba(11, 31, 58, 0.58));
+  --color-hero-glow: radial-gradient(circle at top, rgba(46, 111, 214, 0.22), transparent 45%);
+  --gradient-premium: linear-gradient(135deg, #0b1f3a 0%, #163b6d 100%);
   --shadow-premium: 0 24px 70px rgba(11, 31, 58, 0.12);
 }
 
@@ -30,6 +34,10 @@
   --color-secondary: #163b6d;
   --color-accent: #2e6fd6;
   --color-silver: #8ea0b8;
+  --color-overlay: rgba(7, 17, 31, 0.8);
+  --color-hero-overlay: linear-gradient(135deg, rgba(7, 17, 31, 0.88), rgba(11, 31, 58, 0.64));
+  --color-hero-glow: radial-gradient(circle at top, rgba(46, 111, 214, 0.28), transparent 45%);
+  --gradient-premium: linear-gradient(135deg, #07111f 0%, #163b6d 100%);
   --shadow-premium: 0 28px 80px rgba(0, 0, 0, 0.35);
 }
 
@@ -77,7 +85,7 @@ h6,
 }
 
 .theme-panel {
-  background: linear-gradient(135deg, rgba(11, 31, 58, 0.98) 0%, rgba(22, 59, 109, 0.95) 100%);
+  background: var(--gradient-premium);
   color: #ffffff;
 }
 
@@ -111,6 +119,33 @@ h6,
   background: linear-gradient(180deg, rgba(11, 31, 58, 0.92), rgba(11, 31, 58, 0.84));
   border: 1px solid rgba(201, 206, 214, 0.16);
   box-shadow: var(--shadow-premium);
+}
+
+.theme-glass {
+  background: color-mix(in srgb, var(--color-primary) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-silver) 22%, transparent);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(20px);
+}
+
+.theme-chip {
+  border: 1px solid color-mix(in srgb, var(--color-silver) 20%, transparent);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+  color: var(--color-text);
+}
+
+.theme-chip-dark {
+  border: 1px solid color-mix(in srgb, var(--color-silver) 20%, transparent);
+  background: color-mix(in srgb, white 6%, transparent);
+  color: #ffffff;
+}
+
+.theme-gradient-edge-left {
+  background: linear-gradient(to right, var(--color-surface-2), transparent);
+}
+
+.theme-gradient-edge-right {
+  background: linear-gradient(to left, var(--color-surface-2), transparent);
 }
 
 .btn-primary {

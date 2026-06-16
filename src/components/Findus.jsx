@@ -194,14 +194,14 @@ export default function Findus() {
   const activeArea = buildAreaPolygon(active);
 
   return (
-    <section className="w-full min-h-screen overflow-hidden" style={{ background: "#08060F" }}>
+    <section className="theme-surface-strong w-full min-h-screen overflow-hidden">
       <div className="flex flex-col lg:flex-row w-full min-h-screen">
 
         {/* ── LEFT PANEL ── */}
         <div className="flex flex-col w-full lg:w-[45%] px-6 sm:px-10 md:px-14 py-12 md:py-16 lg:min-h-screen">
           <div className="flex items-center gap-2 mb-6">
-            <span className="w-2 h-2 rounded-full" style={{ background: "#FF6D00" }} />
-            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "#FF6D00" }}>Coverage</span>
+            <span className="h-2 w-2 rounded-full bg-[#2e6fd6]" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2e6fd6]">Coverage</span>
           </div>
 
           <h2 className="site-heading max-w-2xl text-3xl md:text-5xl mb-5">
@@ -227,15 +227,15 @@ export default function Findus() {
                   onClick={() => setActiveTab(office.id)}
                   className="flex flex-col items-start gap-1 px-4 py-3 rounded-xl text-left transition-all duration-300 border"
                   style={{
-                    background: isActive ? "linear-gradient(135deg, rgba(255,109,0,0.18) 0%, rgba(212,24,122,0.18) 100%)" : "rgba(255,255,255,0.04)",
-                    borderColor: isActive ? "rgba(255,109,0,0.55)" : "rgba(255,255,255,0.08)",
+                    background: isActive ? "linear-gradient(135deg, rgba(46,111,214,0.2) 0%, rgba(22,59,109,0.26) 100%)" : "rgba(255,255,255,0.04)",
+                    borderColor: isActive ? "rgba(46,111,214,0.55)" : "rgba(255,255,255,0.08)",
                   }}
                 >
                   <div className="flex items-center gap-1.5">
-                    <span style={{ color: isActive ? "#FF6D00" : "#B8C0CC" }}><LocationPinIcon /></span>
+                    <span style={{ color: isActive ? "#2E6FD6" : "#B8C0CC" }}><LocationPinIcon /></span>
                     <span className="text-sm font-semibold" style={{ color: isActive ? "#FFFFFF" : "#B8C0CC" }}>{office.city}</span>
                   </div>
-                  <span className="text-[11px]" style={{ color: isActive ? "rgba(255,184,0,0.8)" : "rgba(184,192,204,0.55)", paddingLeft: "18px" }}>
+                  <span className="text-[11px]" style={{ color: isActive ? "rgba(201,206,214,0.86)" : "rgba(184,192,204,0.55)", paddingLeft: "18px" }}>
                     {office.country}
                   </span>
                 </button>
@@ -243,9 +243,9 @@ export default function Findus() {
             })}
           </div>
 
-          <div className="mt-8 flex items-center gap-2.5 px-4 py-2.5 rounded-xl self-start" style={{ background: "rgba(255,109,0,0.1)", border: "1px solid rgba(255,109,0,0.25)" }}>
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#FF6D00" }} />
-            <span className="text-xs font-medium" style={{ color: "#FF6D00" }}>Viewing: {active.city}</span>
+          <div className="mt-8 flex items-center gap-2.5 self-start rounded-xl px-4 py-2.5" style={{ background: "rgba(46,111,214,0.12)", border: "1px solid rgba(46,111,214,0.28)" }}>
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[#2e6fd6]" />
+            <span className="text-xs font-medium text-[#2e6fd6]">Viewing: {active.city}</span>
           </div>
         </div>
 
@@ -259,8 +259,8 @@ export default function Findus() {
                 onClick={() => setActiveTab(office.id)}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
                 style={{
-                  background: activeTab === office.id ? "rgba(255,109,0,0.15)" : "transparent",
-                  color: activeTab === office.id ? "#FF6D00" : "rgba(184,192,204,0.6)",
+                  background: activeTab === office.id ? "rgba(46,111,214,0.16)" : "transparent",
+                  color: activeTab === office.id ? "#2E6FD6" : "rgba(184,192,204,0.6)",
                 }}
               >
                 {office.city}
@@ -282,21 +282,21 @@ export default function Findus() {
               <Polygon
                 positions={activeArea}
                 pathOptions={{
-                  color: "#FF6D00",
+                  color: "#2E6FD6",
                   weight: 2,
                   opacity: 0.95,
-                  fillColor: "#FF6D00",
-                  fillOpacity: 0.28,
+                  fillColor: "#2E6FD6",
+                  fillOpacity: 0.24,
                 }}
               />
             </MapContainer>
 
             {/* Overlay UI */}
-            <div className="absolute bottom-0 left-0 right-0 px-5 py-4 flex items-end justify-between pointer-events-none z-1000" style={{ background: "linear-gradient(to top, rgba(8,6,15,0.95), transparent)" }}>
+            <div className="absolute bottom-0 left-0 right-0 z-1000 flex items-end justify-between px-5 py-4 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(11,31,58,0.95), transparent)" }}>
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-widest mb-1" style={{ color: "#FF6D00" }}>Currently viewing</p>
+                <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-[#2e6fd6]">Currently viewing</p>
                 <h3 className="font-bold text-white text-2xl">{active.city}</h3>
-                <p className="text-xs text-gray-400">{active.country}</p>
+                <p className="text-xs text-[rgba(201,206,214,0.72)]">{active.country}</p>
               </div>
             </div>
           </div>

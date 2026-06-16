@@ -154,8 +154,8 @@ const TestimonialsSection = () => {
         ))}
       </div>
 
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[rgba(245,247,250,1)] to-transparent dark:from-[rgba(7,17,31,1)]" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[rgba(245,247,250,1)] to-transparent dark:from-[rgba(7,17,31,1)]" />
+      <div className="theme-gradient-edge-left pointer-events-none absolute left-0 top-0 bottom-0 w-24" />
+      <div className="theme-gradient-edge-right pointer-events-none absolute right-0 top-0 bottom-0 w-24" />
 
       <style>{`
         @keyframes scroll-left {

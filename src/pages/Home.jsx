@@ -1,4 +1,3 @@
-import React from 'react'
 import GlobalCTA from '../components/Banner'
 import HeroSection from '../components/HeroSection'
 import About from '../components/About'

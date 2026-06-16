@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const Contact = () => {
   const services = [
@@ -7,7 +7,7 @@ const Contact = () => {
     "Headlight Crack Repair",
     "Headlight Condensation Repair",
     "Headlight Lens Replacement",
-    "Exterior Enhancement Services"
+    "Exterior Enhancement Services",
   ];
 
   const [formData, setFormData] = useState({
@@ -42,17 +42,12 @@ const Contact = () => {
       return;
     }
 
-    const message = encodeURIComponent(
-      `Name: ${formData.name}
+    const message = encodeURIComponent(`Name: ${formData.name}
 Phone: ${formData.phone}
 Service: ${formData.service}
-Note: ${formData.note || "N/A"}`
-    );
+Note: ${formData.note || "N/A"}`);
 
-    window.open(
-      `https://wa.me/447851823807?text=${message}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/447851823807?text=${message}`, "_blank");
 
     setFormData({
       name: "",
@@ -69,110 +64,76 @@ Note: ${formData.note || "N/A"}`
   };
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-12">
-          <p className="text-sm text-black mb-2 mt-20">Home / Contact</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Get in Touch
-          </h1>
-          <p className="max-w-2xl mx-auto text-[#404143] leading-relaxed">
-            Have questions about our window tinting or headlight services? Need a quote or advice for your vehicle? Reach out to Tomas Exterior, and we'll provide fast, professional support.
+    <section id="contact" className="theme-surface py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="mb-12 text-center">
+          <p className="mt-20 mb-2 text-sm uppercase tracking-[0.28em] theme-accent">Contact</p>
+          <h1 className="site-heading mb-4 text-4xl font-extrabold md:text-5xl">Get in Touch</h1>
+          <p className="mx-auto max-w-2xl leading-relaxed theme-muted">
+            Have questions about our detailing, tinting, or restoration services? Reach out for
+            a fast quote and professional support tailored to your vehicle.
           </p>
-          <p className="max-w-2xl mx-auto mt-3 text-[#404143] leading-relaxed">
-            Whether it's a simple inquiry, a service request, or scheduling an appointment, we're here to help with care and precision.
+          <p className="mx-auto mt-3 max-w-2xl leading-relaxed theme-muted">
+            Whether it&apos;s a quick enquiry or a full service booking, we&apos;re here to help
+            with care, clarity, and premium workmanship.
           </p>
         </div>
 
-        <div className="bg-[#F8F9FC] rounded-3xl p-6 md:p-10 shadow-sm flex flex-col lg:flex-row gap-10 items-center overflow-hidden">
-          <div className="w-full lg:w-1/2">
+        <div className="grid items-center gap-10 overflow-hidden rounded-3xl theme-surface-muted p-6 shadow-sm lg:grid-cols-2 md:p-10">
+          <div className="w-full">
             <iframe
               title="Google Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2142.899561301126!2d-2.286031!3d53.59379889999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba55ab7c86bb1%3A0x2d01d70333586c78!2sTomas%20Exteriors%20professional%20window%20tinting!5e1!3m2!1sen!2slk!4v1769176161599!5m2!1sen!2slk"
               width="100%"
               height="400"
-              className="rounded-2xl shadow-md md:h-125"
-              style={{ border: 0 }}
+              className="h-[400px] rounded-2xl border-0 shadow-md md:h-[500px]"
               loading="lazy"
-            ></iframe>
+            />
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl font-bold text-black mb-6">Get in Touch</h2>
+          <div className="w-full">
+            <h2 className="site-heading mb-6 text-2xl font-bold md:text-3xl">Book a Service</h2>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
-              {/* Full Name */}
               <div>
-                <label className="block text-sm font-semibold text-[#404143] mb-1">
-                  Full Name
-                </label>
+                <label className="mb-1 block text-sm font-semibold theme-text">Full Name</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#F21B23] outline-none transition"
+                  className="input-premium"
                 />
-                {errors.name && (
-                  <p className="text-sm text-red-600 mt-1">{errors.name}</p>
-                )}
+                {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
               </div>
 
-              {/* Phone */}
               <div>
-                <label className="block text-sm font-semibold text-[#404143] mb-1">
-                  Phone
-                </label>
+                <label className="mb-1 block text-sm font-semibold theme-text">Phone</label>
                 <input
                   type="text"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#F21B23] outline-none transition"
+                  className="input-premium"
                 />
-                {errors.phone && (
-                  <p className="text-sm text-red-600 mt-1">{errors.phone}</p>
-                )}
+                {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
               </div>
 
-              {/* Service */}
               <div>
-                <label className="block text-sm font-semibold text-[#404143] mb-1">
-                  Select A Service
-                </label>
-                {/* Wrapper gives us full control over the select's appearance and sizing */}
+                <label className="mb-1 block text-sm font-semibold theme-text">Select A Service</label>
                 <div className="relative w-full">
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="
-                      w-full
-                      min-w-0
-                      px-4 py-3
-                      pr-10
-                      rounded-lg
-                      border border-gray-200
-                      focus:ring-2 focus:ring-[#F21B23]
-                      outline-none
-                      transition
-                      bg-white
-                      cursor-pointer
-                      appearance-none
-                      text-sm
-                      text-[#404143]
-                      truncate
-                    "
+                    className="input-premium min-w-0 appearance-none pr-10 text-sm"
                     style={{
-                      /* Prevent iOS from overriding width on small screens */
-                      WebkitAppearance: 'none',
-                      MozAppearance: 'none',
-                      /* Ensure box-sizing includes padding so it never overflows */
-                      boxSizing: 'border-box',
-                      /* Clip long option text instead of expanding the element */
-                      maxWidth: '100%',
+                      WebkitAppearance: "none",
+                      MozAppearance: "none",
+                      boxSizing: "border-box",
+                      maxWidth: "100%",
                     }}
                   >
                     <option value="">Select a service</option>
@@ -183,10 +144,9 @@ Note: ${formData.note || "N/A"}`
                     ))}
                   </select>
 
-                  {/* Custom chevron icon — keeps alignment with appearance-none */}
-                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center theme-muted">
                     <svg
-                      className="w-4 h-4 text-gray-400"
+                      className="h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -200,30 +160,22 @@ Note: ${formData.note || "N/A"}`
                   </span>
                 </div>
 
-                {errors.service && (
-                  <p className="text-sm text-red-600 mt-1">{errors.service}</p>
-                )}
+                {errors.service && <p className="mt-1 text-sm text-red-600">{errors.service}</p>}
               </div>
 
-              {/* Note */}
               <div>
-                <label className="block text-sm font-semibold text-[#404143] mb-1">
-                  Short Note
-                </label>
+                <label className="mb-1 block text-sm font-semibold theme-text">Short Note</label>
                 <textarea
                   rows="4"
                   name="note"
                   value={formData.note}
                   onChange={handleChange}
                   placeholder="Type here..."
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#F21B23] outline-none transition resize-none"
-                ></textarea>
+                  className="input-premium resize-none"
+                />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#F21B23] text-white font-bold py-4 rounded-xl hover:bg-[#404143] transition-colors shadow-lg mt-2"
-              >
+              <button type="submit" className="btn-primary mt-2 w-full rounded-xl py-4 font-bold shadow-lg">
                 Submit
               </button>
             </form>

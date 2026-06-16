@@ -12,8 +12,8 @@ export default function HeroSection() {
         playsInline
       />
 
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(11,31,58,0.82),rgba(11,31,58,0.58))]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(46,111,214,0.22),transparent_45%)]" />
+      <div className="absolute inset-0" style={{ background: "var(--color-hero-overlay)" }} />
+      <div className="absolute inset-0" style={{ background: "var(--color-hero-glow)" }} />
 
       <section className="relative z-10 flex min-h-screen items-center px-6 py-28">
         <div className="mx-auto w-full max-w-5xl text-center">
@@ -36,7 +36,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#service"
-              className="btn-secondary inline-flex rounded-full px-8 py-3.5 font-semibold text-white"
+              className="inline-flex rounded-full border border-white/35 px-8 py-3.5 font-semibold text-white transition hover:border-[#2e6fd6] hover:bg-[#2e6fd6] hover:text-white"
             >
               Explore Services
             </a>

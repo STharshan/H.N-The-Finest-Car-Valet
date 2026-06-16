@@ -69,10 +69,21 @@ export default function Gallery() {
   const totalPages = Math.ceil(items.length / itemsPerView);
   const currentPage = Math.floor(startIndex / itemsPerView);
 
+  const pressButton = async (ref) => {
+    if (!ref.current) return;
+    return gsap.to(ref.current, {
+      scale: 0.88,
+      duration: 0.1,
+      ease: "power2.out",
+      yoyo: true,
+      repeat: 1,
+    });
+  };
+
   const prevSlide = useCallback(async () => {
     if (startIndex > 0 && !isAnimating) {
       setIsAnimating(true);
-      await pressButton(leftBtnRef, "left");
+      await pressButton(leftBtnRef);
       setStartIndex((prev) => Math.max(0, prev - itemsPerView));
       setTimeout(() => setIsAnimating(false), 500);
     }
@@ -81,7 +92,7 @@ export default function Gallery() {
   const nextSlide = useCallback(async () => {
     if (startIndex < items.length - itemsPerView && !isAnimating) {
       setIsAnimating(true);
-      await pressButton(rightBtnRef, "right");
+      await pressButton(rightBtnRef);
       setStartIndex((prev) => Math.min(items.length - itemsPerView, prev + itemsPerView));
       setTimeout(() => setIsAnimating(false), 500);
     }
@@ -95,17 +106,6 @@ export default function Gallery() {
 
   const goToPage = (page) => {
     setStartIndex(page * itemsPerView);
-  };
-
-  const pressButton = async (ref, dir) => {
-    if (!ref.current) return;
-    return gsap.to(ref.current, {
-      scale: 0.88,
-      duration: 0.1,
-      ease: "power2.out",
-      yoyo: true,
-      repeat: 1,
-    });
   };
 
   useEffect(() => {
@@ -152,7 +152,7 @@ export default function Gallery() {
       <style>{`
 
         .gallery-section {
-          background: #050505;
+          background: var(--gradient-premium);
           position: relative;
           overflow: hidden;
         }
@@ -165,7 +165,7 @@ export default function Gallery() {
           transform: translateX(-50%);
           width: 600px;
           height: 600px;
-          background: radial-gradient(circle, rgba(220,20,20,0.08) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(46,111,214,0.14) 0%, transparent 70%);
           pointer-events: none;
         }
 
@@ -175,7 +175,7 @@ export default function Gallery() {
         }
 
         .title-accent {
-          color: #dc2626;
+          color: #2e6fd6;
           position: relative;
           display: inline-block;
         }
@@ -187,7 +187,7 @@ export default function Gallery() {
           left: 0;
           width: 100%;
           height: 2px;
-          background: linear-gradient(90deg, #dc2626, transparent);
+          background: linear-gradient(90deg, #2e6fd6, transparent);
         }
 
         .cat-scroll {
@@ -202,8 +202,8 @@ export default function Gallery() {
           font-size: 0.75rem;
           letter-spacing: 0.05em;
           white-space: nowrap;
-          border: 1px solid rgba(220,38,38,0.4);
-          color: rgba(255,255,255,0.7);
+          border: 1px solid rgba(201,206,214,0.28);
+          color: rgba(255,255,255,0.78);
           padding: 6px 14px;
           border-radius: 2px;
           background: transparent;
@@ -213,16 +213,16 @@ export default function Gallery() {
         }
 
         .cat-btn:hover {
-          border-color: #dc2626;
+          border-color: #2e6fd6;
           color: #fff;
-          background: rgba(220,38,38,0.08);
+          background: rgba(46,111,214,0.08);
         }
 
         .cat-btn.active {
-          background: #dc2626;
-          border-color: #dc2626;
+          background: #2e6fd6;
+          border-color: #2e6fd6;
           color: #fff;
-          box-shadow: 0 0 20px rgba(220,38,38,0.3);
+          box-shadow: 0 0 20px rgba(46,111,214,0.3);
         }
 
         .nav-btn {
@@ -232,9 +232,9 @@ export default function Gallery() {
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid rgba(220,38,38,0.5);
-          background: rgba(220,38,38,0.05);
-          color: #dc2626;
+          border: 1px solid rgba(201,206,214,0.32);
+          background: rgba(255,255,255,0.06);
+          color: #2e6fd6;
           cursor: pointer;
           transition: all 0.2s ease;
           flex-shrink: 0;
@@ -246,10 +246,10 @@ export default function Gallery() {
         }
 
         .nav-btn:hover:not(:disabled) {
-          background: #dc2626;
+          background: #2e6fd6;
           color: #fff;
-          box-shadow: 0 0 25px rgba(220,38,38,0.4);
-          border-color: #dc2626;
+          box-shadow: 0 0 25px rgba(46,111,214,0.35);
+          border-color: #2e6fd6;
         }
 
         .nav-btn:disabled {
@@ -267,25 +267,25 @@ export default function Gallery() {
         }
 
         .dot.active {
-          background: #dc2626;
+          background: #2e6fd6;
           width: 20px;
           border-radius: 3px;
-          box-shadow: 0 0 8px rgba(220,38,38,0.5);
+          box-shadow: 0 0 8px rgba(46,111,214,0.5);
         }
 
         .card-wrap {
           border-radius: 4px;
           overflow: hidden;
-          border: 1px solid rgba(220,38,38,0.25);
-          background: #0a0a0a;
+          border: 1px solid rgba(201,206,214,0.2);
+          background: rgba(11,31,58,0.72);
           box-shadow: 0 4px 40px rgba(0,0,0,0.6);
           transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
           cursor: grab;
         }
 
         .card-wrap:hover {
-          border-color: rgba(220,38,38,0.6);
-          box-shadow: 0 8px 60px rgba(220,38,38,0.15), 0 4px 40px rgba(0,0,0,0.8);
+          border-color: rgba(46,111,214,0.5);
+          box-shadow: 0 8px 60px rgba(46,111,214,0.16), 0 4px 40px rgba(0,0,0,0.8);
           transform: translateY(-4px);
         }
 
@@ -301,7 +301,7 @@ export default function Gallery() {
           top: 0;
           bottom: 0;
           width: 2px;
-          background: linear-gradient(to bottom, transparent, #dc2626 20%, #dc2626 80%, transparent);
+          background: linear-gradient(to bottom, transparent, #2e6fd6 20%, #2e6fd6 80%, transparent);
           cursor: ew-resize;
           z-index: 10;
         }
@@ -313,14 +313,14 @@ export default function Gallery() {
           transform: translate(-50%, -50%);
           width: 36px;
           height: 36px;
-          background: #dc2626;
+          background: #2e6fd6;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
           font-size: 12px;
-          box-shadow: 0 0 20px rgba(220,38,38,0.6), 0 2px 8px rgba(0,0,0,0.5);
+          box-shadow: 0 0 20px rgba(46,111,214,0.55), 0 2px 8px rgba(0,0,0,0.5);
           border: 2px solid rgba(255,255,255,0.2);
           pointer-events: none;
         }
@@ -334,7 +334,7 @@ export default function Gallery() {
 
         .progress-fill {
           height: 100%;
-          background: linear-gradient(90deg, #dc2626, #ff6b6b);
+          background: linear-gradient(90deg, #2e6fd6, #163b6d);
           border-radius: 1px;
           transition: width 0.4s ease;
         }
@@ -347,13 +347,13 @@ export default function Gallery() {
       <section className="gallery-section py-16 px-3 sm:px-6 lg:px-8" id="before-after">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-red-600 text-xs tracking-[0.3em] uppercase font-medium mb-3 opacity-80">
+          <p className="text-[#c9ced6] text-xs tracking-[0.3em] uppercase font-medium mb-3 opacity-90">
             Transformation Portfolio
           </p>
           <h2 className="gallery-title text-5xl sm:text-6xl md:text-7xl text-white">
             OUR <span className="title-accent">GALLERY</span>
           </h2>
-          <p className="text-gray-500 text-sm mt-4 tracking-wide max-w-sm mx-auto">
+          <p className="text-[rgba(201,206,214,0.76)] text-sm mt-4 tracking-wide max-w-sm mx-auto">
             Drag the slider to reveal before &amp; after results
           </p>
         </div>
@@ -434,7 +434,7 @@ export default function Gallery() {
         )}
 
         {/* Count */}
-        <p className="text-center text-gray-600 text-xs tracking-widest mt-6 uppercase">
+        <p className="mt-6 text-center text-xs tracking-widest uppercase text-[rgba(201,206,214,0.76)]">
           {Math.min(startIndex + itemsPerView, items.length)} / {items.length} results
         </p>
       </section>
@@ -520,13 +520,13 @@ function BeforeAfterCard({ before, after, category }) {
   return (
     <div className="card-wrap">
       {/* Card header */}
-      <div className="px-3 py-2 flex items-center justify-between bg-black border-b border-white/5">
+      <div className="flex items-center justify-between border-b border-white/8 bg-[rgba(7,17,31,0.92)] px-3 py-2">
         <div className="flex gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-red-600/60" />
-          <span className="w-2 h-2 rounded-full bg-yellow-600/40" />
-          <span className="w-2 h-2 rounded-full bg-green-600/30" />
+          <span className="h-2 w-2 rounded-full bg-[#2e6fd6]" />
+          <span className="h-2 w-2 rounded-full bg-[#c9ced6]/70" />
+          <span className="h-2 w-2 rounded-full bg-[#2e8b57]/70" />
         </div>
-        <span className="text-gray-600 text-[10px] tracking-widest uppercase">{category?.split(" ").slice(0,2).join(" ")}</span>
+        <span className="text-[10px] tracking-widest uppercase text-[rgba(201,206,214,0.56)]">{category?.split(" ").slice(0,2).join(" ")}</span>
       </div>
 
       {/* Image container */}
@@ -537,13 +537,13 @@ function BeforeAfterCard({ before, after, category }) {
       >
         {/* Before label */}
         <div className="absolute top-3 left-3 z-20 pointer-events-none">
-          <span className="label-badge bg-black/70 text-gray-300 backdrop-blur-sm border border-white/10">
+          <span className="label-badge border border-white/10 bg-[rgba(7,17,31,0.72)] text-[#c9ced6] backdrop-blur-sm">
             BEFORE
           </span>
         </div>
         {/* After label */}
         <div className="absolute top-3 right-3 z-20 pointer-events-none">
-          <span className="label-badge bg-red-600/90 text-white backdrop-blur-sm">
+          <span className="label-badge bg-[#2e6fd6] text-white backdrop-blur-sm">
             AFTER
           </span>
         </div>

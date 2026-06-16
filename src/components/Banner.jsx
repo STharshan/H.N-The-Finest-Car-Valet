@@ -1,72 +1,64 @@
-
-
 const GlobalCTA = () => {
   return (
-    <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-
-          {/* LEFT CTA CARD */}
-          <div className="relative lg:col-span-2 rounded-3xl overflow-hidden">
-            {/* Background Image */}
+    <section className="theme-surface py-12">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-3">
+          <div className="relative overflow-hidden rounded-3xl lg:col-span-2">
             <img
               src="/Exterior-a.jpeg"
-              alt="Plumbing Service"
-              className="absolute inset-0 w-full h-full object-cover"
+              alt="Premium vehicle detailing"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(135deg, rgba(11,31,58,0.88), rgba(22,59,109,0.72))" }}
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-linear-to-r from-[#404143]/90 to-[#404143]/60"></div>
-
-            {/* Content */}
-            <div className="relative z-10 p-10 md:p-14 h-full flex flex-col justify-center">
-              <span className="text-[#F21B23] font-semibold mb-4">
-                Looking for Professional Window Tinting or Headlight Services?
+            <div className="relative z-10 flex h-full flex-col justify-center p-10 md:p-14">
+              <span className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#c9ced6]">
+                Premium Automotive Support
               </span>
 
-              <h2 className="text-white text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
-                Let’s discuss your vehicle needs and provide the right solution.
+              <h2 className="mb-8 text-4xl font-extrabold leading-tight text-white md:text-5xl">
+                Let&apos;s discuss your vehicle needs and recommend the right finish.
               </h2>
 
               <a
                 href="https://wa.me/447851823807"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#F21B23] text-black font-semibold px-8 py-4 rounded-full w-fit hover:bg-white transition"
+                className="btn-primary inline-flex w-fit items-center justify-center rounded-full px-8 py-4 font-semibold"
               >
                 Get a Quote via WhatsApp
               </a>
             </div>
           </div>
 
-          {/* RIGHT AGENT CARD */}
-          <div className="bg-[#404143] rounded-3xl p-10 flex flex-col justify-between">
+          <div className="theme-panel flex flex-col justify-between rounded-3xl p-10">
             <div>
-              {/* Agent Image */}
               <img
                 src="tag.jpeg"
-                alt="Wade Warren"
-                className="w-16 h-16 rounded-full bg-[#F21B23] mb-6"
+                alt="Founder portrait"
+                className="mb-6 h-16 w-16 rounded-full border border-[rgba(201,206,214,0.2)] bg-[#2e6fd6] object-cover"
               />
 
-              {/* Text */}
-              <h3 className="text-white text-lg font-semibold leading-relaxed mb-8">
-                This is Tomas, Founder of Tomas Exterior. <br />
-                I’m here to personally answer your questions and help you choose the best window tinting or headlight solution for your vehicle.
+              <h3 className="mb-8 text-lg font-semibold leading-relaxed text-white">
+                This is the H.N Automotive Care team.
+                <br />
+                We&apos;re here to answer your questions and help you choose the best detailing,
+                tinting, or restoration option for your vehicle.
               </h3>
             </div>
 
-            {/* Call Button */}
             <a
               href="https://wa.me/447851823807"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#F21B23] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#141420] transition"
+              className="inline-flex items-center justify-center rounded-full border-2 border-[#2e6fd6] px-8 py-4 font-semibold text-white transition hover:bg-[#2e6fd6]"
             >
               Start a WhatsApp Chat
             </a>
           </div>
-
         </div>
       </div>
     </section>

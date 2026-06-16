@@ -1,157 +1,121 @@
-import React from "react";
 import { FaFacebookF } from "react-icons/fa";
-import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
-  return (
-    <footer className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+  const serviceLinks = [
+    "Window Tinting",
+    "Headlight Restoration",
+    "Crack Repair",
+    "Condensation Repair",
+    "Lens Replacement",
+    "Exterior Enhancement",
+  ];
 
-        {/* Company Info */}
+  const quickLinks = [
+    { label: "Home", to: "/#home" },
+    { label: "About Us", to: "/#about" },
+    { label: "Services", to: "/#service" },
+    { label: "Gallery", to: "/#before-after" },
+    { label: "Contact", to: "/#contact" },
+  ];
+
+  return (
+    <footer className="theme-panel border-t border-[rgba(201,206,214,0.12)]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center mb-4">
-            <div className="bg-teal-700 text-white w-10 h-10 flex items-center justify-center text-xl rounded-md font-bold">
-              JS
+          <div className="mb-4 flex items-center">
+            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#2e6fd6] text-xl font-bold text-white">
+              HN
             </div>
-            <div className="ml-2">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
-                JS Automotive
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Services</p>
+            <div className="ml-3">
+              <h3 className="text-lg font-bold text-white">H.N Automotive Care</h3>
+              <p className="text-sm text-[rgba(201,206,214,0.76)]">Premium Detailing</p>
             </div>
           </div>
-          <p className="text-sm max-w-50 mx-auto mb-4 text-gray-600 dark:text-gray-400">
-            At JS Automotive Edlington, we pride ourselves on providing high-quality, honest, and affordable vehicle care to our local community
+          <p className="mb-4 max-w-xs text-sm text-[rgba(201,206,214,0.76)]">
+            Premium automotive detailing, restoration, and tinting with a clean luxury finish
+            and trustworthy service.
           </p>
-          <div className="flex space-x-4 text-teal-700 dark:text-teal-400 text-lg">
+          <div className="flex space-x-4 text-lg text-[#2e6fd6]">
             <a
               href="https://www.facebook.com/profile.php?id=61562506876945"
               target="_blank"
               rel="noopener noreferrer"
+              className="transition hover:text-white"
+              aria-label="Facebook"
             >
-              <FaFacebookF className="hover:text-blue-700" />
+              <FaFacebookF />
             </a>
           </div>
         </div>
 
-        {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-            Our Services
-          </h3>
-          <ul className="space-y-2 text-sm">
-            <li className="hover:text-teal-500">
-              <Link to="/services/mot">MOT Testing</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/servicing">Full Servicing</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/brake">Brake Services</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/diagnostics">Diagnostics</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/dpf-clean">DPF Cleaning</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/cam-belt">Cam Belt Replacement</Link>
-            </li>
+          <h3 className="mb-4 text-lg font-semibold text-white">Our Services</h3>
+          <ul className="space-y-2 text-sm text-[rgba(201,206,214,0.76)]">
+            {serviceLinks.map((service) => (
+              <li key={service} className="transition hover:text-white">
+                {service}
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-            Quick Links
-          </h3>
-          <ul className="space-y-2 text-sm">
-            <li className="hover:text-teal-500">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/about">About Us</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/services/mot">Book MOT</Link>
-            </li>
-            <li className="hover:text-teal-500">
-              <Link to="/contact">Get Quote</Link>
-            </li>
+          <h3 className="mb-4 text-lg font-semibold text-white">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-[rgba(201,206,214,0.76)]">
+            {quickLinks.map((link) => (
+              <li key={link.label}>
+                <HashLink smooth to={link.to} className="transition hover:text-white">
+                  {link.label}
+                </HashLink>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-            Contact Info
-          </h3>
-          <ul className="space-y-3 text-sm">
+          <h3 className="mb-4 text-lg font-semibold text-white">Contact Info</h3>
+          <ul className="space-y-3 text-sm text-[rgba(201,206,214,0.76)]">
             <li className="flex items-start">
-              <FiPhone className="mt-1 mr-2 text-teal-700 dark:text-teal-400" />
-              <a href="tel:+441709863222" className="hover:text-teal-500">
-                +44 1709 863222<br />
+              <FiPhone className="mt-1 mr-2 text-[#2e6fd6]" />
+              <a href="tel:+447851823807" className="transition hover:text-white">
+                +44 7851 823807
               </a>
             </li>
             <li className="flex items-start">
-              <FiMail className="mt-1 mr-2 text-teal-700 dark:text-teal-400" />
-              <a
-                href="mailto:Js.automotive1@outlook.com"
-                className="hover:text-teal-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Js.automotive1@outlook.com
-              </a>
-            </li>
-            <li className="flex items-start">
-              <FiMapPin className="mt-1 mr-2 text-teal-700 dark:text-teal-400" />
+              <FiMapPin className="mt-1 mr-2 text-[#2e6fd6]" />
               <a
                 href="https://maps.app.goo.gl/me2GLeqXUvnRav5v8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-teal-500"
+                className="transition hover:text-white"
               >
-                New Edlington,<br />
-                Doncaster DN12 1DJ,<br />
+                Greater Manchester,
+                <br />
                 United Kingdom
               </a>
             </li>
             <li className="flex items-start">
-              <FiClock className="mt-1 mr-2 text-teal-700 dark:text-teal-400" />
+              <FiClock className="mt-1 mr-2 text-[#2e6fd6]" />
               <span>
-                Mon-Wed: 8AM-5PM<br />
-                Thu: 8AM-5:30PM <br />
-                Fri: 8AM-5PM <br />
-                Sat: 8AM-2PM<br />
-                Sun: Closed
+                Mon-Sat: By Appointment
+                <br />
+                Quick quotes via WhatsApp
               </span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} JS Automotive Services. All rights reserved.</p>
+      <div className="border-t border-[rgba(201,206,214,0.12)] text-sm text-[rgba(201,206,214,0.72)]">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-4 md:flex-row">
+          <p>&copy; {new Date().getFullYear()} H.N Automotive Care. All rights reserved.</p>
           <div>
             Powered By{" "}
-            <a
-              href="https://www.ansely.co.uk/"
-              className="hover:text-teal-500 hover:underline"
-            >
+            <a href="https://www.ansely.co.uk/" className="transition hover:text-white hover:underline">
               Ansely
             </a>
-          </div>
-          <div className="flex space-x-6 mt-2 md:mt-0">
-            <Link to="/privacy" className="hover:text-teal-500">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-teal-500">Terms & Conditions</Link>
           </div>
         </div>
       </div>
