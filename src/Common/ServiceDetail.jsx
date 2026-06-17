@@ -1,100 +1,95 @@
-
-import { Check } from 'lucide-react';
+import { Check } from "lucide-react";
 
 const ServiceDetail = ({ data }) => {
-  // Brand color constant
-  const brandColor = '#13AFFE';
+  const brandColor = "#2e6fd6";
 
   if (!data) return null;
 
   const { mainTitle, mainDescription, benefits, process, subDesc } = data;
 
   return (
-    /* Background flips between White and Black */
-    <section className="bg-white dark:bg-black py-10 transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Header Section */}
-        <div className="max-w-4xl mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-0.5" style={{ backgroundColor: brandColor }}></div>
-            <span className="font-bold uppercase tracking-[0.3em] text-[10px]" style={{ color: brandColor }}>
+    <section className="theme-surface py-10 transition-colors duration-500">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 max-w-4xl">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="h-0.5 w-10" style={{ backgroundColor: brandColor }}></div>
+            <span
+              className="text-[10px] font-bold uppercase tracking-[0.3em] theme-accent"
+              style={{ color: brandColor }}
+            >
               Professional Service • Excellence
             </span>
           </div>
-          {/* Text flips between Black and White */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
+
+          <h2 className="site-heading mb-8 text-4xl font-bold tracking-tighter theme-text md:text-5xl lg:text-6xl uppercase">
             {mainTitle}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl">
+          <p className="max-w-3xl text-lg leading-relaxed theme-muted md:text-xl">
             {mainDescription}
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mt-3 text-lg md:text-xl leading-relaxed max-w-3xl">
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed theme-muted md:text-xl">
             {subDesc}
           </p>
         </div>
 
-        {/* Two Column Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-          
-          {/* Left Column: Benefits */}
-          <div className="bg-gray-50 dark:bg-[#0A0A0A] rounded-2xl p-8 lg:p-12 border border-gray-200 dark:border-white/5 hover:border-[#13AFFE]/30 transition-colors duration-500 group">
-            <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-10 uppercase tracking-tight flex items-center gap-3">
-              <span className="w-2 h-8 rounded-full" style={{ backgroundColor: brandColor }}></span>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
+          <div className="premium-card group rounded-3xl p-8 lg:p-12">
+            <h3 className="mb-10 flex items-center gap-3 text-2xl font-bold tracking-tight theme-text md:text-3xl uppercase">
+              <span className="h-8 w-2 rounded-full" style={{ backgroundColor: brandColor }}></span>
               {benefits?.title}
             </h3>
+
             <div className="space-y-10">
               {benefits?.items?.map((item, index) => (
                 <div key={index} className="flex gap-5">
-                  <div className="shrink-0 mt-1">
-                    <div 
-                      className="w-6 h-6 rounded-full flex items-center justify-center border transition-colors duration-500 group-hover:bg-[#13AFFE] border-[#13AFFE]/30" 
-                      style={{ backgroundColor: `${brandColor}1A` }}
+                  <div className="mt-1 shrink-0">
+                    <div
+                      className="flex h-6 w-6 items-center justify-center rounded-full border transition-colors duration-500 group-hover:bg-[#2e6fd6] border-[#2e6fd6]/30"
+                      style={{ backgroundColor: "rgba(46,111,214,0.12)" }}
                     >
-                      <Check 
-                        className="w-3.5 h-3.5 transition-colors duration-500 group-hover:text-white" 
-                        style={{ color: brandColor }} 
+                      <Check
+                        className="h-3.5 w-3.5 transition-colors duration-500 group-hover:text-white"
+                        style={{ color: brandColor }}
                       />
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-2 uppercase tracking-wide transition-colors group-hover:text-[#13AFFE]">
+                    <h4 className="mb-2 text-lg font-bold uppercase tracking-wide theme-text transition-colors group-hover:text-[#2e6fd6]">
                       {item.heading}
                     </h4>
-                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm md:text-base">{item.text}</p>
+                    <p className="text-sm leading-relaxed theme-muted md:text-base">{item.text}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column: Process */}
-          <div className="bg-gray-50 dark:bg-[#0A0A0A] rounded-2xl p-8 lg:p-12 border border-gray-200 dark:border-white/5 hover:border-[#13AFFE]/30 transition-colors duration-500 group">
-            <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-10 uppercase tracking-tight flex items-center gap-3">
-              <span className="w-2 h-8 bg-black/10 dark:bg-white/20 rounded-full group-hover:bg-[#13AFFE] transition-colors"></span>
+          <div className="premium-card group rounded-3xl p-8 lg:p-12">
+            <h3 className="mb-10 flex items-center gap-3 text-2xl font-bold tracking-tight theme-text md:text-3xl uppercase">
+              <span className="h-8 w-2 rounded-full bg-[rgba(46,111,214,0.16)] group-hover:bg-[#2e6fd6] transition-colors"></span>
               {process?.title}
             </h3>
+
             <div className="space-y-10">
               {process?.steps?.map((step, index) => (
-                <div key={index} className="flex gap-5 relative">
+                <div key={index} className="relative flex gap-5">
                   {index !== process.steps.length - 1 && (
-                    <div className="absolute left-4 top-10 h-full bg-black/5 dark:bg-white/5 group-hover:bg-[#13AFFE]/20 transition-colors" />
+                    <div className="absolute left-4 top-10 h-full w-px bg-[rgba(46,111,214,0.14)] group-hover:bg-[rgba(46,111,214,0.24)] transition-colors" />
                   )}
-                  
-                  <div className="shrink-0 w-8 h-8 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-white group-hover:border-[#13AFFE] group-hover:bg-[#13AFFE] transition-all duration-500 z-10 bg-white dark:bg-[#0A0A0A]">
+
+                  <div className="theme-surface relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[rgba(46,111,214,0.18)] text-xs font-black theme-muted group-hover:border-[#2e6fd6] group-hover:bg-[#2e6fd6] group-hover:text-white transition-all duration-500">
                     {index + 1}
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-2 uppercase tracking-wide">
+                    <h4 className="mb-2 text-lg font-bold uppercase tracking-wide theme-text">
                       {step.heading}
                     </h4>
-                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm md:text-base">{step.text}</p>
+                    <p className="text-sm leading-relaxed theme-muted md:text-base">{step.text}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>

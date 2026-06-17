@@ -1,15 +1,14 @@
 import { FaFacebookF } from "react-icons/fa";
 import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   const serviceLinks = [
-    "Window Tinting",
-    "Headlight Restoration",
-    "Crack Repair",
-    "Condensation Repair",
-    "Lens Replacement",
-    "Exterior Enhancement",
+    { label: "Professional Add-On Services", to: "/services/professional-add-on-services" },
+    { label: "Full Interior Deep Clean", to: "/services/full-interior-deep-clean" },
+    { label: "Maintenance Valet Packages", to: "/services/maintenance-valet-packages" },
+    { label: "New Car Protection Package", to: "/services/new-car-protection-package" },
   ];
 
   const quickLinks = [
@@ -54,8 +53,10 @@ const Footer = () => {
           <h3 className="mb-4 text-lg font-semibold text-white">Our Services</h3>
           <ul className="space-y-2 text-sm text-[rgba(201,206,214,0.76)]">
             {serviceLinks.map((service) => (
-              <li key={service} className="transition hover:text-white">
-                {service}
+              <li key={service.to}>
+                <Link to={service.to} className="transition hover:text-white">
+                  {service.label}
+                </Link>
               </li>
             ))}
           </ul>
