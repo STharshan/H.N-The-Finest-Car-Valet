@@ -39,7 +39,7 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
       `*More Info:* ${form.info}`;
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/447446253967?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/447515634636?text=${encoded}`, "_blank");
     setForm(createInitialForm(packageName || ""));
     onClose();
   };
