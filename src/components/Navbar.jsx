@@ -23,14 +23,14 @@ const Navbar = () => {
           <HashLink smooth to="/#home" className="flex items-center gap-3">
             <img
               src="/logo.png"
-              alt="CARSY Logo"
+              alt="H.N The Finest Car Valet logo"
               className="h-12 w-12 rounded-full object-cover ring-1 ring-[rgba(201,206,214,0.28)]"
             />
             <div className="hidden sm:block">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(201,206,214,0.78)]">
-                Premium Detailer
+              <p className="text-[11px] uppercase tracking-[0.28em] text-[#7fb1ff]">
+                Mobile Valeting
               </p>
-              <p className="text-sm font-semibold text-white">H.N Automotive Care</p>
+              <p className="text-sm font-semibold text-white">H.N The Finest Car Valet</p>
             </div>
           </HashLink>
         </div>
