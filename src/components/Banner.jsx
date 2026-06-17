@@ -24,7 +24,7 @@ const GlobalCTA = () => {
               </h2>
 
               <a
-                href="https://wa.me/447851823807"
+                href="https://wa.me/447515634636"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex w-fit items-center justify-center rounded-full px-8 py-4 font-semibold"
@@ -43,15 +43,16 @@ const GlobalCTA = () => {
               />
 
               <h3 className="mb-8 text-lg font-semibold leading-relaxed text-white">
-                This is the H.N Automotive Care team.
+                This is the H.N The Finest Car Valet team.
                 <br />
-                We&apos;re here to answer your questions and help you choose the best detailing,
-                tinting, or restoration option for your vehicle.
+                We&apos;re here to answer your questions and help you choose the
+                best valeting, detailing, paint correction, or ceramic coating
+                option for your vehicle.
               </h3>
             </div>
 
             <a
-              href="https://wa.me/447851823807"
+              href="https://wa.me/447515634636"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border-2 border-[#2e6fd6] px-8 py-4 font-semibold text-white transition hover:bg-[#2e6fd6]"

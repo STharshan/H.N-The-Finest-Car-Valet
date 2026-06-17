@@ -16,35 +16,39 @@ export default function About() {
       <div className="container mx-auto px-4 md:px-12">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] theme-accent">Why Choose Us</p>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] theme-accent">About H.N The Finest Car Valet</p>
             <h2 className="site-heading mb-6 text-3xl font-bold md:text-5xl">
-              Premium care for drivers who expect a flawless finish.
+              Professional mobile detailing and protection with trusted results.
             </h2>
 
             <p className="mb-6 text-lg leading-relaxed theme-muted">
-              We combine precision detailing, trusted products, and a luxury-first approach to
-              keep your vehicle looking sharp, protected, and professionally finished.
+              H.N The Finest Car Valet provides professional mobile valeting, detailing, paint
+              correction, and ceramic coating services throughout Nottingham and the surrounding
+              areas. Our mission is simple: deliver exceptional results, outstanding customer
+              service, and long-lasting protection for every vehicle we work on.
             </p>
             <p className="mb-6 text-lg leading-relaxed theme-muted">
-              Every service is tailored for quality, consistency, and that clean high-contrast
-              automotive look that feels polished from every angle.
+              Whether it&apos;s a family car, classic vehicle, motorbike, caravan, or fleet
+              vehicle, we bring the expertise, equipment, and attention to detail needed to
+              restore and maintain your vehicle&apos;s appearance without you having to leave home.
             </p>
 
-            <div className="mb-8 grid grid-cols-3 gap-4">
+            <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
-                { value: "1000+", label: "Vehicles Serviced" },
-                { value: "10+", label: "Years Experience" },
-                { value: "98%", label: "Client Satisfaction" },
+                { title: "Fully Mobile", label: "We Come To You" },
+                { title: "Fully Insured", label: "Professional & Reliable Service" },
+                { title: "Autobrite Accredited", label: "Trusted Industry Standards" },
+                { title: "7 Days A Week", label: "Flexible Appointments Available" },
               ].map((stat) => (
-                <div key={stat.label} className="premium-card rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold theme-accent md:text-3xl">{stat.value}</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.2em] theme-muted">{stat.label}</div>
+                <div key={stat.title} className="premium-card rounded-2xl p-5 text-left">
+                  <div className="text-lg font-bold theme-accent md:text-xl">{stat.title}</div>
+                  <div className="mt-2 text-sm uppercase tracking-[0.2em] theme-muted">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             <button type="button" onClick={scrollToContact} className="btn-primary rounded-full px-6 py-3 font-semibold">
-              Contact Us
+              Get a Free Quote
             </button>
           </div>
 

@@ -18,21 +18,22 @@ export default function HeroSection() {
       <section className="relative z-10 flex min-h-screen items-center px-6 py-28">
         <div className="mx-auto w-full max-w-5xl text-center">
           <p className="mb-5 text-sm uppercase tracking-[0.35em] text-[rgba(255,255,255,0.72)]">
-            Premium Automotive Detailing
+            H.N The Finest Car Valet
           </p>
 
           <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-[58px]">
-            Luxury finish, trusted care, and a cleaner drive every time.
+            Professional Mobile Detailing & Vehicle Protection Services
           </h1>
 
           <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-[rgba(255,255,255,0.82)] md:text-lg">
-            Professional detailing, tinting, and exterior restoration crafted for a premium
-            automotive look with honest service and lasting quality.
+            From routine maintenance valets to advanced paint correction and ceramic coatings, we
+            help keep your vehicle looking its absolute best with expert care and attention to
+            detail.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#contact" className="btn-primary inline-flex rounded-full px-8 py-3.5 font-semibold shadow-lg">
-              Book Your Detail
+              Book Your Valet
             </a>
             <a
               href="#service"
@@ -44,9 +45,9 @@ export default function HeroSection() {
 
           <div className="mt-12 grid gap-4 text-sm sm:grid-cols-3">
             {[
-              "Premium protection and polish",
-              "Trusted workmanship",
-              "Modern luxury finish",
+              "Paint Correction Specialists",
+              "Fully Mobile Service Across the East Midlands",
+              "Trusted by Car Enthusiasts & Daily Drivers",
             ].map((item) => (
               <div
                 key={item}
