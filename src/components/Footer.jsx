@@ -1,4 +1,4 @@
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FiPhone, FiMapPin, FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -42,13 +42,31 @@ const Footer = () => {
           </p>
           <div className="flex space-x-4 text-lg text-[#2e6fd6]">
             <a
-              href="https://www.facebook.com/profile.php?id=61562506876945"
+              href="https://www.facebook.com/share/KRgENLZ9c85CbnS6/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-white"
               aria-label="Facebook"
             >
               <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/h.nthefinestcarvalet?igsh=MWo5MWl3aGoxeGN6eg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.tiktok.com/@h.n.thefinestcar.valet?_t=8qDSJDeCWky&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+              aria-label="TikTok"
+            >
+              <FaTiktok />
             </a>
           </div>
         </div>
