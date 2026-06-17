@@ -10,7 +10,7 @@ export const servicePages = [
         "From engine bay detailing and pet hair removal to headlight restoration and soft top treatments, our additional services are designed to tackle specific issues and provide the finishing touches that help your vehicle look its absolute best.",
       desc2:
         "Available through our fully mobile service across Nottingham, Leicester, Mansfield, Derby, and surrounding areas.",
-      thumbnailImage: "/tab.jpg",
+      thumbnailImage: "/image.png",
       thumbnailAlt: "Professional add-on vehicle care services",
     },
     detail: {
@@ -189,7 +189,7 @@ export const servicePages = [
         "Designed to eliminate embedded dirt, stains, bacteria, odours, and everyday contamination, this service focuses exclusively on transforming your vehicle's cabin back to its best possible condition.",
       desc2:
         "Available through our fully mobile service across Nottingham, Leicester, Mansfield, Derby, and surrounding areas.",
-      thumbnailImage: "/tab.jpg",
+      thumbnailImage: "/image.png",
       thumbnailAlt: "Full interior deep clean service",
     },
     detail: {
@@ -304,7 +304,7 @@ export const servicePages = [
         "Designed for vehicles that have already received a Deep Clean, Premium Valet, or Protection Package, our Maintenance Valets help preserve your vehicle's appearance through routine professional care.",
       desc2:
         "Available through our fully mobile service across Nottingham, Leicester, Mansfield, Derby, and surrounding areas.",
-      thumbnailImage: "/tab.jpg",
+      thumbnailImage: "/image.png",
       thumbnailAlt: "Maintenance valet package",
     },
     detail: {
@@ -419,7 +419,7 @@ export const servicePages = [
         "Designed to preserve the appearance, value, and condition of your vehicle, this package combines paint enhancement, ceramic protection, glass coating, and wheel protection to keep your car looking newer for longer.",
       desc2:
         "Available through our fully mobile service across Nottingham, Leicester, Mansfield, Derby, and surrounding areas.",
-      thumbnailImage: "/tab.jpg",
+      thumbnailImage: "/image.png",
       thumbnailAlt: "New car protection package",
     },
     detail: {
