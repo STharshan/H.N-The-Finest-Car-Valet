@@ -4,125 +4,43 @@ import "leaflet/dist/leaflet.css";
 
 const offices = [
   {
-    id: 0, city: "Salford", country: "Greater Manchester", lat: 53.4875, lng: -2.2901,
+    id: 0, city: "Nottingham", country: "East Midlands", lat: 52.9548, lng: -1.1581,
     subs: [
-      { name: "Salford City Centre", lat: 53.4875, lng: -2.2901 },
-      { name: "Eccles", lat: 53.4839, lng: -2.3341 },
-      { name: "Swinton", lat: 53.514, lng: -2.337 },
-      { name: "Worsley", lat: 53.503, lng: -2.383 },
-      { name: "Walkden", lat: 53.516, lng: -2.397 },
-      { name: "Irlam", lat: 53.442, lng: -2.423 },
-      { name: "Pendleton", lat: 53.479, lng: -2.273 },
-      { name: "Ordsall", lat: 53.474, lng: -2.275 },
-      { name: "Little Hulton", lat: 53.533, lng: -2.416 },
-      { name: "Boothstown", lat: 53.499, lng: -2.428 },
+      { name: "Nottingham City Centre", lat: 52.9548, lng: -1.1581 },
+      { name: "West Bridgford", lat: 52.93, lng: -1.125 },
+      { name: "Arnold", lat: 53.005, lng: -1.13 },
+      { name: "Beeston", lat: 52.922, lng: -1.216 },
+      { name: "Carlton", lat: 52.965, lng: -1.083 },
     ],
   },
   {
-    id: 1, city: "Stockport", country: "Greater Manchester", lat: 53.4106, lng: -2.1575,
+    id: 1, city: "Leicester", country: "East Midlands", lat: 52.6369, lng: -1.1398,
     subs: [
-      { name: "Stockport Town Centre", lat: 53.4106, lng: -2.1575 },
-      { name: "Cheadle", lat: 53.394, lng: -2.214 },
-      { name: "Bramhall", lat: 53.358, lng: -2.166 },
-      { name: "Hazel Grove", lat: 53.376, lng: -2.11 },
-      { name: "Marple", lat: 53.394, lng: -2.062 },
-      { name: "Romiley", lat: 53.414, lng: -2.089 },
-      { name: "Edgeley", lat: 53.399, lng: -2.169 },
-      { name: "Heaton Moor", lat: 53.421, lng: -2.179 },
-      { name: "Gatley", lat: 53.392, lng: -2.231 },
-      { name: "Bredbury", lat: 53.423, lng: -2.11 },
+      { name: "Leicester City Centre", lat: 52.6369, lng: -1.1398 },
+      { name: "Oadby", lat: 52.606, lng: -1.083 },
+      { name: "Wigston", lat: 52.584, lng: -1.092 },
+      { name: "Birstall", lat: 52.677, lng: -1.122 },
+      { name: "Glenfield", lat: 52.67, lng: -1.19 },
     ],
   },
   {
-    id: 2, city: "Bolton", country: "Greater Manchester", lat: 53.5781, lng: -2.4282,
+    id: 2, city: "Mansfield", country: "East Midlands", lat: 53.1435, lng: -1.2015,
     subs: [
-      { name: "Bolton Town Centre", lat: 53.5781, lng: -2.4282 },
-      { name: "Horwich", lat: 53.601, lng: -2.548 },
-      { name: "Farnworth", lat: 53.55, lng: -2.404 },
-      { name: "Westhoughton", lat: 53.549, lng: -2.524 },
-      { name: "Radcliffe", lat: 53.559, lng: -2.324 },
-      { name: "Kearsley", lat: 53.53, lng: -2.375 },
-      { name: "Leigh", lat: 53.497, lng: -2.518 },
-      { name: "Atherton", lat: 53.523, lng: -2.494 },
-      { name: "Tyldesley", lat: 53.513, lng: -2.467 },
-      { name: "Little Lever", lat: 53.565, lng: -2.378 },
+      { name: "Mansfield Town Centre", lat: 53.1435, lng: -1.2015 },
+      { name: "Woodhouse", lat: 53.163, lng: -1.185 },
+      { name: "Berry Hill", lat: 53.132, lng: -1.174 },
+      { name: "Rainworth", lat: 53.119, lng: -1.119 },
+      { name: "Shirebrook", lat: 53.204, lng: -1.213 },
     ],
   },
   {
-    id: 3, city: "Wigan", country: "Greater Manchester", lat: 53.5450, lng: -2.6325,
+    id: 3, city: "Derby", country: "East Midlands", lat: 52.9225, lng: -1.4746,
     subs: [
-      { name: "Wigan Town Centre", lat: 53.5450, lng: -2.6325 },
-      { name: "Leigh", lat: 53.497, lng: -2.518 },
-      { name: "Atherton", lat: 53.523, lng: -2.494 },
-      { name: "Hindley", lat: 53.533, lng: -2.577 },
-      { name: "Ashton-in-Makerfield", lat: 53.483, lng: -2.644 },
-      { name: "Skelmersdale", lat: 53.55, lng: -2.77 },
-      { name: "Standish", lat: 53.586, lng: -2.665 },
-      { name: "Golborne", lat: 53.476, lng: -2.597 },
-      { name: "Abram", lat: 53.508, lng: -2.586 },
-      { name: "Ince", lat: 53.539, lng: -2.61 },
-    ],
-  },
-  {
-    id: 4, city: "Rochdale", country: "Greater Manchester", lat: 53.6097, lng: -2.1561,
-    subs: [
-      { name: "Rochdale Town Centre", lat: 53.6097, lng: -2.1561 },
-      { name: "Heywood", lat: 53.59, lng: -2.219 },
-      { name: "Middleton", lat: 53.55, lng: -2.2 },
-      { name: "Milnrow", lat: 53.611, lng: -2.112 },
-      { name: "Littleborough", lat: 53.644, lng: -2.095 },
-      { name: "Wardle", lat: 53.65, lng: -2.13 },
-      { name: "Norden", lat: 53.64, lng: -2.18 },
-      { name: "Bamford", lat: 53.61, lng: -2.17 },
-      { name: "Castleton", lat: 53.59, lng: -2.18 },
-      { name: "Whitworth", lat: 53.656, lng: -2.178 },
-    ],
-  },
-  {
-    id: 5, city: "Oldham", country: "Greater Manchester", lat: 53.5409, lng: -2.1114,
-    subs: [
-      { name: "Oldham Town Centre", lat: 53.54, lng: -2.11 },
-      { name: "Saddleworth", lat: 53.55, lng: -2.02 },
-      { name: "Royton", lat: 53.565, lng: -2.122 },
-      { name: "Chadderton", lat: 53.536, lng: -2.147 },
-      { name: "Failsworth", lat: 53.51, lng: -2.164 },
-      { name: "Lees", lat: 53.55, lng: -2.08 },
-      { name: "Shaw", lat: 53.577, lng: -2.095 },
-      { name: "Crompton", lat: 53.58, lng: -2.1 },
-      { name: "Springhead", lat: 53.53, lng: -2.08 },
-      { name: "Uppermill", lat: 53.55, lng: -2.0 },
-    ],
-  },
-  {
-    id: 6, city: "Trafford", country: "Greater Manchester", lat: 53.4448, lng: -2.3484,
-    subs: [
-      { name: "Trafford", lat: 53.4448, lng: -2.3484 },
-      { name: "Stretford", lat: 53.447, lng: -2.308 },
-      { name: "Sale", lat: 53.425, lng: -2.324 },
-      { name: "Altrincham", lat: 53.387, lng: -2.348 },
-      { name: "Urmston", lat: 53.448, lng: -2.354 },
-      { name: "Partington", lat: 53.42, lng: -2.43 },
-      { name: "Bowdon", lat: 53.376, lng: -2.365 },
-      { name: "Hale", lat: 53.378, lng: -2.332 },
-      { name: "Timperley", lat: 53.4, lng: -2.335 },
-      { name: "Flixton", lat: 53.45, lng: -2.39 },
-      { name: "Davyhulme", lat: 53.457, lng: -2.34 },
-    ],
-  },
-  {
-    id: 7, city: "Cheshire", country: "North West", lat: 53.3000, lng: -2.5000,
-    subs: [
-      { name: "Cheshire", lat: 53.3000, lng: -2.5000 },
-      { name: "Chester", lat: 53.193, lng: -2.893 },
-      { name: "Crewe", lat: 53.1, lng: -2.443 },
-      { name: "Macclesfield", lat: 53.26, lng: -2.125 },
-      { name: "Wilmslow", lat: 53.326, lng: -2.231 },
-      { name: "Congleton", lat: 53.163, lng: -2.211 },
-      { name: "Northwich", lat: 53.258, lng: -2.516 },
-      { name: "Winsford", lat: 53.19, lng: -2.52 },
-      { name: "Knutsford", lat: 53.302, lng: -2.374 },
-      { name: "Nantwich", lat: 53.067, lng: -2.521 },
-      { name: "Ellesmere Port", lat: 53.28, lng: -2.895 },
+      { name: "Derby City Centre", lat: 52.9225, lng: -1.4746 },
+      { name: "Mickleover", lat: 52.912, lng: -1.53 },
+      { name: "Chaddesden", lat: 52.926, lng: -1.431 },
+      { name: "Allestree", lat: 52.939, lng: -1.495 },
+      { name: "Borrowash", lat: 52.909, lng: -1.344 },
     ],
   },
 ];
@@ -207,15 +125,15 @@ export default function Findus() {
           <h2 className="site-heading max-w-2xl text-3xl md:text-5xl mb-5">
             Proudly Serving<br />
             <span className="site-heading-accent gradient-text-fix inline-block pr-2">
-              Greater
+              The East
             </span> <br />
             <span className="site-heading-accent gradient-text-fix inline-block pr-2">
-              Manchester
+              Midlands
             </span>
           </h2>
 
           <p className="site-subheading mb-10 max-w-sm">
-            Based in Manchester, we provide professional autobody repair services across the surrounding areas.
+            We bring premium mobile vehicle valeting and detailing services directly to customers across Nottingham, Leicester, Mansfield, Derby, and nearby locations, delivering professional results wherever you are.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3">
