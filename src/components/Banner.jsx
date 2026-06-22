@@ -2,8 +2,8 @@ const GlobalCTA = () => {
   return (
     <section className="theme-surface py-12">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-3">
-          <div className="relative overflow-hidden rounded-3xl lg:col-span-2">
+        <div className="grid grid-cols-1 items-stretch gap-8 xl:grid-cols-3">
+          <div className="relative overflow-hidden rounded-3xl xl:col-span-2">
             <img
               src="/Exterior-a.jpeg"
               alt="Premium vehicle detailing"
@@ -14,12 +14,12 @@ const GlobalCTA = () => {
               style={{ background: "linear-gradient(135deg, rgba(11,31,58,0.88), rgba(22,59,109,0.72))" }}
             />
 
-            <div className="relative z-10 flex h-full flex-col justify-center p-10 md:p-14">
+            <div className="relative z-10 flex h-full flex-col justify-center p-10 lg:p-14">
               <span className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#c9ced6]">
                 Premium Automotive Support
               </span>
 
-              <h2 className="mb-8 text-4xl font-extrabold leading-tight text-white md:text-5xl">
+              <h2 className="mb-8 text-4xl font-extrabold leading-tight text-white lg:text-5xl">
                 Let&apos;s discuss your vehicle needs and recommend the right finish.
               </h2>
 

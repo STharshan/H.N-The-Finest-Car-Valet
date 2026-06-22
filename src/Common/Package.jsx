@@ -224,7 +224,7 @@ export default function Package({ data }) {
           <div className="mt-10 flex flex-col gap-10 lg:mt-0">
             {packages?.map((pkg, idx) => (
               <div key={idx} className="premium-card rounded-3xl p-6 transition-all duration-500 hover:border-[#2e6fd6]/40 hover:shadow-xl sm:p-8">
-                <p className="mb-2 text-sm font-semibold theme-muted">{pkg.type}</p>
+                <h3 className="mb-2 text-sm font-semibold theme-muted">{pkg.type}</h3>
                 <div className="mb-6 rounded-2xl theme-surface-muted p-5">
                   <h3 className="text-4xl font-bold text-[#2e6fd6] sm:text-5xl">{pkg.price}</h3>
                 </div>

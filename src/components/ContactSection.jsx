@@ -99,7 +99,7 @@ const Contact = () => {
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-12 text-center">
           <p className="mt-20 mb-2 text-sm uppercase tracking-[0.28em] theme-accent">Contact</p>
-          <h1 className="site-heading mb-4 text-4xl font-extrabold md:text-5xl">Get in Touch</h1>
+          <h2 className="site-heading mb-4 text-4xl font-extrabold md:text-5xl">Get in Touch</h2>
           <p className="mx-auto max-w-2xl leading-relaxed theme-muted">
             Have questions about our valeting, detailing, paint correction, or
             ceramic coating services? Need a quote or advice on the best
@@ -165,9 +165,9 @@ const Contact = () => {
 
           <div className="flex w-full items-center">
             <div className="w-full">
-              <h2 className="site-heading mb-6 text-center text-2xl font-bold md:text-3xl">
+              <h3 className="site-heading mb-6 text-center text-2xl font-bold md:text-3xl">
                 Get in Touch
-              </h2>
+              </h3>
 
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
