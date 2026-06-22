@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToHash from "./components/ScrollToHash";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
