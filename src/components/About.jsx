@@ -17,7 +17,7 @@ export default function About() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.3em] theme-accent">About H.N The Finest Car Valet</p>
-            <h2 className="site-heading mb-6 text-3xl font-bold md:text-5xl">
+            <h2 className="site-heading mb-6 text-4xl font-bold md:text-5xl">
               Professional mobile detailing and protection with trusted results.
             </h2>
 

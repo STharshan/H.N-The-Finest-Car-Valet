@@ -196,7 +196,7 @@ export default function Package({ data }) {
                   {displayDetail?.title}
                 </p>
               </div>
-              <h2 className="site-heading text-3xl font-extrabold leading-tight theme-text sm:text-4xl">
+              <h2 className="site-heading text-4xl font-extrabold leading-tight theme-text md:text-5xl">
                 {displayDetail?.desc}
               </h2>
             </div>
