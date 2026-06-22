@@ -19,7 +19,7 @@ const ServiceBanner = ({ data }) => {
             </span>
           </div>
 
-          <h1 className="site-heading mb-8 text-4xl font-bold tracking-tighter theme-text md:text-7xl uppercase">
+          <h1 className="site-heading mb-8 text-4xl font-bold tracking-tighter theme-text md:text-5xl uppercase">
             {title}
           </h1>
 

@@ -122,7 +122,7 @@ export default function Findus() {
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2e6fd6]">Coverage</span>
           </div>
 
-          <h2 className="site-heading max-w-2xl text-3xl md:text-5xl mb-5">
+          <h2 className="site-heading mb-5 max-w-2xl text-4xl md:text-5xl">
             Proudly Serving<br />
             <span className="site-heading-accent gradient-text-fix inline-block pr-2">
               The East

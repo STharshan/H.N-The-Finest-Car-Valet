@@ -350,7 +350,7 @@ export default function Gallery() {
           <p className="text-[#c9ced6] text-xs tracking-[0.3em] uppercase font-medium mb-3 opacity-90">
             Transformation Portfolio
           </p>
-          <h2 className="gallery-title text-5xl sm:text-6xl md:text-7xl text-white">
+          <h2 className="gallery-title text-4xl md:text-5xl text-white">
             OUR <span className="title-accent">GALLERY</span>
           </h2>
           <p className="text-[rgba(201,206,214,0.76)] text-sm mt-4 tracking-wide max-w-sm mx-auto">

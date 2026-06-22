@@ -39,7 +39,7 @@ const ServiceDetail = ({ data }) => {
             </span>
           </div>
 
-          <h2 className="site-heading mb-8 text-4xl font-bold tracking-tighter theme-text md:text-5xl lg:text-6xl uppercase">
+          <h2 className="site-heading mb-8 text-4xl font-bold tracking-tighter theme-text md:text-5xl uppercase">
             {mainTitle}
           </h2>
           <div className="space-y-3">
