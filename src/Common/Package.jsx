@@ -186,9 +186,9 @@ export default function Package({ data }) {
 
   return (
     <>
-      <section id="package" className="theme-surface-muted scroll-m-10 px-4 py-10 transition-colors duration-500 sm:px-6 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="self-start space-y-8 lg:sticky lg:top-24 lg:h-fit">
+      <section id="package" className="theme-surface-muted scroll-m-10 px-4 py-10 transition-colors duration-500 sm:px-6 xl:px-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-12 xl:grid xl:grid-cols-[0.9fr_1.1fr]">
+          <div className="self-start space-y-8 xl:sticky xl:top-24 xl:h-fit">
             <div>
               <div className="mb-4 flex items-center gap-3">
                 <div className="h-0.5 w-12" style={{ backgroundColor: brandBlue }}></div>
@@ -221,7 +221,7 @@ export default function Package({ data }) {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col gap-10 lg:mt-0">
+          <div className="mt-10 flex flex-col gap-10 xl:mt-0">
             {packages?.map((pkg, idx) => (
               <div key={idx} className="premium-card rounded-3xl p-6 transition-all duration-500 hover:border-[#2e6fd6]/40 hover:shadow-xl sm:p-8">
                 <h3 className="mb-2 text-sm font-semibold theme-muted">{pkg.type}</h3>

@@ -34,7 +34,7 @@ const ServiceBanner = ({ data }) => {
           </p>
         </div>
 
-        <div className="relative mx-auto w-full overflow-hidden rounded-3xl border theme-border premium-card lg:w-[1200px]">
+        <div className="relative mx-auto w-full max-w-[1200px] overflow-hidden rounded-3xl border theme-border premium-card">
           <img
             src={thumbnailImage}
             alt={thumbnailAlt || `${title} vehicle detailing service by H.N The Finest Car Valet`}
