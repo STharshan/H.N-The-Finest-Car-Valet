@@ -137,9 +137,9 @@ const Footer = () => {
             <li className="flex items-start">
               <FiClock className="mt-1 mr-2 text-[#2e6fd6]" />
               <span>
-                Mon-Sat: By Appointment
+                7 Days a Week
                 <br />
-                Mobile service across the East Midlands
+                8:00 AM – 8:00 PM
               </span>
             </li>
           </ul>
