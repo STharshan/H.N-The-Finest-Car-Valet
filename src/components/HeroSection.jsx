@@ -51,10 +51,12 @@ export default function HeroSection() {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-center gap-2 rounded-2xl border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.06)] px-4 py-3 backdrop-blur-sm"
+                className="flex items-center gap-2 rounded-2xl border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.06)] px-3 py-3 text-left backdrop-blur-sm sm:justify-center sm:px-4 sm:text-center"
               >
-                <FaCheckCircle className="text-[#2e6fd6]" size={16} />
-                <span className="text-[rgba(255,255,255,0.88)]">{item}</span>
+                <FaCheckCircle className="shrink-0 text-[#2e6fd6]" size={14} />
+                <span className="whitespace-nowrap text-xs leading-5 text-[rgba(255,255,255,0.88)] sm:text-sm">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
