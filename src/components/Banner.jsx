@@ -37,7 +37,7 @@ const GlobalCTA = () => {
           <div className="theme-panel flex flex-col justify-between rounded-3xl p-10">
             <div>
               <img
-                src="tag.jpeg"
+                src="/logo.png"
                 alt="Founder portrait"
                 className="mb-6 h-16 w-16 rounded-full border border-[rgba(201,206,214,0.2)] bg-[#2e6fd6] object-cover"
               />

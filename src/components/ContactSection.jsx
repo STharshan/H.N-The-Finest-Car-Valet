@@ -1,34 +1,35 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { servicePages } from "../data/serviceData";
+
+const services = servicePages.map((service) => service.seoTitle);
+
+const initialFormData = {
+  name: "",
+  phone: "",
+  service: "",
+  note: "",
+};
+
+const initialErrors = {
+  name: "",
+  phone: "",
+  service: "",
+};
 
 const Contact = () => {
-  const services = [
-    "Valeting",
-    "Detailing",
-    "Paint Correction",
-    "Ceramic Coating",
-    "Interior Deep Clean",
-    "Exterior Enhancement",
-  ];
-
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    service: "",
-    note: "",
-  });
-
-  const [errors, setErrors] = useState({
-    name: "",
-    phone: "",
-    service: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState(initialErrors);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
+    setSubmitStatus({ type: "", message: "" });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
@@ -39,28 +40,58 @@ const Contact = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      setSubmitStatus({
+        type: "error",
+        message: "Please complete the required fields before submitting the form.",
+      });
       return;
     }
 
-    const message = encodeURIComponent(`Name: ${formData.name}
-Phone: ${formData.phone}
-Service: ${formData.service}
-Note: ${formData.note || "N/A"}`);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    window.open(`https://wa.me/447515634636?text=${message}`, "_blank");
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus({
+        type: "error",
+        message: "Email service is not configured yet. Add the EmailJS Vite keys to enable this form.",
+      });
+      return;
+    }
 
-    setFormData({
-      name: "",
-      phone: "",
-      service: "",
-      note: "",
-    });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: "", message: "" });
 
-    setErrors({
-      name: "",
-      phone: "",
-      service: "",
-    });
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          phone_number: formData.phone,
+          selected_service: formData.service,
+          message: formData.note || "N/A",
+        },
+        {
+          publicKey,
+        }
+      );
+
+      setFormData(initialFormData);
+      setErrors(initialErrors);
+      setSubmitStatus({
+        type: "success",
+        message: "Your enquiry has been sent successfully. We will get back to you soon.",
+      });
+    } catch (error) {
+      console.error("EmailJS submission failed", error);
+      setSubmitStatus({
+        type: "error",
+        message: "We could not send your enquiry right now. Please try again in a moment.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -219,8 +250,28 @@ Note: ${formData.note || "N/A"}`);
                   />
                 </div>
 
-                <button type="submit" className="btn-primary mt-2 w-full rounded-xl py-4 font-bold shadow-lg">
-                  Submit
+                {submitStatus.message && (
+                  <div
+                    role={submitStatus.type === "error" ? "alert" : "status"}
+                    aria-live="polite"
+                    className={`rounded-2xl border px-4 py-3 text-sm font-medium ${
+                      submitStatus.type === "success" ? "text-green-600" : "text-red-600"
+                    } ${
+                      submitStatus.type === "success"
+                        ? "border-green-500/30 bg-green-500/10"
+                        : "border-red-500/30 bg-red-500/10"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary mt-2 w-full rounded-xl py-4 font-bold shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </button>
               </form>
             </div>
