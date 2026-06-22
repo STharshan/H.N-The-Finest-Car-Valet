@@ -148,7 +148,9 @@ const Footer = () => {
 
       <div className="border-t border-[rgba(201,206,214,0.12)] text-sm text-[rgba(201,206,214,0.72)]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-4 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} H.N The Finest Car Valet. All rights reserved.</p>
+          <p className="whitespace-nowrap text-xs sm:text-sm">
+            &copy; {new Date().getFullYear()} H.N The Finest Car Valet. All rights reserved.
+          </p>
           <div>
             Powered By{" "}
             <a href="https://www.ansely.co.uk/" className="transition hover:text-white hover:underline">
