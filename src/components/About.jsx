@@ -13,11 +13,11 @@ export default function About() {
 
   return (
     <section id="about" className="theme-surface-muted py-20">
-      <div className="container mx-auto px-4 md:px-12">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="container mx-auto px-4 xl:px-12">
+        <div className="grid items-center gap-12 xl:grid-cols-2">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.3em] theme-accent">About H.N The Finest Car Valet</p>
-            <h2 className="site-heading mb-6 text-4xl font-bold md:text-5xl">
+            <h2 className="site-heading mb-6 text-4xl font-bold lg:text-5xl">
               Professional mobile detailing and protection with trusted results.
             </h2>
 
@@ -41,7 +41,7 @@ export default function About() {
                 { title: "7 Days A Week", label: "Flexible Appointments Available" },
               ].map((stat) => (
                 <div key={stat.title} className="premium-card rounded-2xl p-5 text-left">
-                  <div className="text-lg font-bold theme-accent md:text-xl">{stat.title}</div>
+                  <div className="text-lg font-bold theme-accent lg:text-xl">{stat.title}</div>
                   <div className="mt-2 text-sm uppercase tracking-[0.2em] theme-muted">{stat.label}</div>
                 </div>
               ))}
@@ -53,7 +53,7 @@ export default function About() {
           </div>
 
           <div className="relative overflow-hidden rounded-3xl shadow-[0_24px_70px_rgba(11,31,58,0.12)]" style={{ "--gap": `${gapPx}px` }}>
-            <div className="relative h-80 md:h-96 lg:h-[28rem]" style={{ margin: "0 calc(var(--gap) * -1)" }}>
+            <div className="relative h-80 xl:h-96 2xl:h-[28rem]" style={{ margin: "0 calc(var(--gap) * -1)" }}>
               <div
                 className="flex h-full will-change-transform"
                 style={{
